@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:25:45 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/19 16:12:36 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/19 18:10:36 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,10 @@ void	print_list(t_list **stack_a)
 	head = (*stack_a);
 	while (head->next != NULL)
 	{
-		printf("%d\n", head->data);
+		printf("%d//", head->data);
+		printf("%d\n", head->index);
 		head = head->next;
 	}
-	printf("%d\n", head->data);
+	printf("%d//", head->data);
+	printf("%d\n", head->index);
 }

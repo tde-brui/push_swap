@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 11:59:12 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/19 16:12:12 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/19 18:07:16 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	push_swap(int argc, char **argv)
 	// if (input_val(argv) == 1)
 	// 	return (0);
 	pass_list(&stack_a, argc, argv);
+	ft_index(&stack_a, argc, argv);
 	print_list(&stack_a);
 	return (0);
 

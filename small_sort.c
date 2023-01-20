@@ -6,11 +6,10 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/20 14:34:27 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/20 18:43:37 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/20 19:02:28 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "push_swap.h"
 
 // void	sort_2(t_list **stack_a)

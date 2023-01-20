@@ -6,12 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/19 16:17:50 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/20 14:55:25 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/20 19:02:00 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
 void	rotate(t_list **stack)
 {

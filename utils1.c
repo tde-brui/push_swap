@@ -6,12 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:25:45 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/19 18:10:36 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/20 19:04:26 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
 #include <stdio.h>
 
 int	list_len(t_list **stack)
@@ -61,6 +60,8 @@ void	list_add_back(t_list **stack_a, int value)
 
 void	print_list(t_list **stack_a)
 {
+	// DONT FORGET TO REMOVE/COMMENT OUT PRINT LIST!!!
+	// IT USES PRINTF!!!
 	t_list	*head;
 
 	head = (*stack_a);

@@ -6,12 +6,20 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/19 13:03:22 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/20 17:57:00 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/20 23:40:16 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "push_swap.h"
+#include <limits.h>
+
+int	ft_isdigit(int a)
+{
+	if (a > 47 && a < 58)
+		return (1);
+	else
+		return (0);
+}
 
 int	ft_atoi(const char *str)
 {
@@ -43,16 +51,17 @@ int	ft_atoi(const char *str)
 int	input_val(char **argv)
 {
 	int	i;
-	int	j;
+	int	input;
 
-	i = 0;
-	j = 0;
-	while (argv[i][j])
+	i = 1;
+	while (argv[i])
 	{
-		if (argv[i][0] == ' ')
-			i++;
+		input = ft_atoi(argv[i]);
+		if (input > INT_MAX || input < INT_MIN)
+			return (1);
+		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	ft_is_sorted(t_list **stack_a)

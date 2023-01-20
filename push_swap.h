@@ -6,12 +6,15 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:10:32 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/20 18:32:55 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/20 23:31:22 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_node{
 	int				index;
@@ -24,11 +27,13 @@ t_list	*list_add(t_list **stack_a, int value);
 void	list_add_back(t_list **stack_a, int value);
 void	print_list(t_list **stack_a);
 int		ft_atoi(const char *str);
+int		ft_isdigit(int a);
 int		input_val(char **argv);
 int		ft_is_sorted(t_list **stack_a);
 void	ft_index(t_list **stack_a, int argc, char **argv);
 void	rotate(t_list **stack);
 void	radix_sort(int argc, t_list **stack_a, t_list **stack_b);
+void	big_sort(int argc, t_list **stack_a, t_list **stack_b);
 void	small_sort(int argc, t_list **stack_a, t_list **stack_b);
 void	sort_5(t_list **stack_a, t_list **stack_b);
 void	sort_4(t_list **stack_a, t_list **stack_b);

@@ -6,12 +6,10 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:33:10 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/20 18:05:16 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/20 20:02:29 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
 #include "push_swap.h"
 
 void	sa(t_list **stack)
@@ -86,4 +84,5 @@ void	rra(t_list **stack_a)
 	(*stack_a) = last;
 	(*stack_a)->next = head;
 	s2last->next = NULL;
+	write(1, "rra\n", 4);
 }

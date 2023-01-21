@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/19 13:03:22 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/20 23:40:16 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/21 18:37:04 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,17 @@ int	input_val(char **argv)
 	return (0);
 }
 
-int	ft_is_sorted(t_list **stack_a)
+int	ft_is_sorted(int argc, t_list **stack_a)
 {
 	t_list	*head;
+	t_list	*curr;
 
 	head = (*stack_a);
-	while (head->next != NULL)
+	curr = (*stack_a);
+	while (head != NULL)
 	{
+		if (head->next == curr)
+			break ;
 		if (head->data > head->next->data)
 			return (1);
 		head = head->next;

@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:33:10 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/20 20:02:29 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/21 18:31:27 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,9 @@ void	sa(t_list **stack)
 	write(1, "sa\n", 3);
 }
 
-void	ra(t_list **stack)
+void	ra(int argc, t_list **stack)
 {
-	t_list	*head;
-	t_list	*last;
-
-	head = (*stack);
-	last = (*stack);
-	while (last->next != NULL)
-		last = last->next;
-	(*stack) = head->next;
-	head->next = NULL;
-	last->next = head;
+	(*stack) = (*stack)->next;
 	write(1, "ra\n", 3);
 }
 
@@ -56,33 +47,43 @@ void	pa(t_list **stack_a, t_list **stack_b)
 
 void	pb(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*head_a;
 	t_list	*head_b;
+	t_list	*last_a;
+	t_list	*prev;
 
-	head_a = (*stack_a);
 	head_b = (*stack_b);
-	(*stack_a) = (*stack_a)->next;
-	(*stack_b) = head_a;
+	last_a = (*stack_a);
+	prev = NULL;
+	while (last_a != NULL)
+	{
+		last_a = last_a->next;
+		if (last_a == (*stack_a))
+			break ;
+		prev = last_a;
+	}
+	(*stack_b) = (*stack_a);
 	(*stack_b)->next = head_b;
+	(*stack_a) = (*stack_a)->next;
+	prev->next = (*stack_a);
 	write(1, "pb\n", 3);
 }
 
 void	rra(t_list **stack_a)
 {
-	t_list	*s2last;
-	t_list	*last;
 	t_list	*head;
+	t_list	*prev;
+	t_list	*curr;
 
-	s2last = NULL;
-	last = (*stack_a);
 	head = (*stack_a);
-	while (last->next != NULL)
+	prev = NULL;
+	curr = (*stack_a);
+	while (head != NULL)
 	{
-		s2last = last;
-		last = last->next;
+		curr = curr->next;
+		if (curr == head)
+			break ;
+		prev = curr;
 	}
-	(*stack_a) = last;
-	(*stack_a)->next = head;
-	s2last->next = NULL;
+	(*stack_a) = prev;
 	write(1, "rra\n", 4);
 }

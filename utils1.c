@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:25:45 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/20 19:04:26 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/21 18:42:03 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,17 @@ t_list	*list_new(int value)
 	return (new_node);
 }
 
-void	list_add_back(t_list **stack_a, int value)
+void	list_add_back(int argc, t_list **stack_a, int value)
 {
-	int		i;
 	t_list	*head;
 
-	i = 1;
 	head = (*stack_a);
 	if ((*stack_a) == NULL)
 		(*stack_a) = list_new(value);
 	else
 	{
 		while (head->next != NULL)
-		{
 			head = head->next;
-			i++;
-		}
 		head->next = list_new(value);
 	}
 }
@@ -63,14 +58,18 @@ void	print_list(t_list **stack_a)
 	// DONT FORGET TO REMOVE/COMMENT OUT PRINT LIST!!!
 	// IT USES PRINTF!!!
 	t_list	*head;
+	t_list	*curr;
 
 	head = (*stack_a);
-	while (head->next != NULL)
+	curr = (*stack_a);
+	while (head != NULL)
 	{
+		head = head->next;
 		printf("%d//", head->data);
 		printf("%d\n", head->index);
-		head = head->next;
+		if (head == curr)
+			break ;
 	}
-	printf("%d//", head->data);
-	printf("%d\n", head->index);
+	// printf("%d//", head->data);
+	// printf("%d\n", head->index);
 }

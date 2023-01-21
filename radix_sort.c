@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/20 14:41:30 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/20 22:52:06 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/21 18:39:48 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ void	big_sort(int argc, t_list **stack_a, t_list **stack_b)
 	max_index = argc - 2;
 	max_bits = get_max_bits(max_index);
 	i = 0;
-	while (i < 4)
+	while (i < max_bits)
 	{
 		j = 0;
 		while (j < (argc - 1))
 		{
 			value = (*stack_a)->index;
 			if (((value >> i) & 1) == 1)
-				ra(stack_a);
+				ra(argc, stack_a);
 			else
 				pb(stack_a, stack_b);
 			j++;

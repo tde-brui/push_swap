@@ -6,27 +6,27 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/19 16:17:50 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/20 19:02:00 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/21 18:46:16 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_list **stack)
-{
-	t_list	*last;
-	t_list	*head;
+// void	rotate(t_list **stack)
+// {
+// 	t_list	*last;
+// 	t_list	*head;
 
-	last = (*stack);
-	head = (*stack);
-	// if (head == NULL || head->next == NULL)
-	// 	return (NULL);
-	while (last->next != NULL)
-		last = last->next;
-	(*stack) = head->next;
-	head->next = NULL;
-	last->next = head;
-}
+// 	last = (*stack);
+// 	head = (*stack);
+// 	// if (head == NULL || head->next == NULL)
+// 	// 	return (NULL);
+// 	while (last->next != NULL)
+// 		last = last->next;
+// 	(*stack) = head->next;
+// 	head->next = NULL;
+// 	last->next = head;
+// }
 
 void	ft_index(t_list **stack_a, int argc, char **argv)
 {
@@ -37,13 +37,13 @@ void	ft_index(t_list **stack_a, int argc, char **argv)
 	t_list	*curr;
 
 	j = 0;
+	head = (*stack_a);
+	curr = (*stack_a);
 	while (j < (argc - 1))
 	{
 		i = 0;
 		index = 0;
-		head = (*stack_a);
-		curr = (*stack_a);
-		while (curr->next != NULL)
+		while (i < (argc - 1))
 		{
 			if (head->data > curr->next->data)
 				index++;
@@ -51,7 +51,7 @@ void	ft_index(t_list **stack_a, int argc, char **argv)
 			curr = curr->next;
 		}
 		head->index = index;
-		rotate(stack_a);
+		head = head->next;
 		j++;
 	}
 }

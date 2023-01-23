@@ -6,12 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:33:10 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/22 00:24:06 by tijmendebru   ########   odam.nl         */
+/*   Updated: 2023/01/23 15:04:39 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	sa(t_list **stack)
 {

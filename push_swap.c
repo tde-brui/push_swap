@@ -6,12 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 11:59:12 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/22 13:05:59 by tijmendebru   ########   odam.nl         */
+/*   Updated: 2023/01/23 16:02:12 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 t_list	*pass_list(t_list **stack_a, int argc, char **argv)
 {
@@ -31,8 +30,6 @@ t_list	*pass_list(t_list **stack_a, int argc, char **argv)
 	return (*stack_a);
 }
 
-//returns 1 if fail right now
-
 int	push_swap(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -42,17 +39,16 @@ int	push_swap(int argc, char **argv)
 	stack_b = NULL;
 	if (argc == 1 || argc == 2)
 		return (1);
-	// if (input_val(argv) == 1)
-	// {
-	// 	write(1, "Error\n", 6);
-	// 	return (1);
-	// }
+	if (input_val(argc, argv) == 1)
+	{
+		write(1, "Error\n", 6);
+		return (1);
+	}
 	pass_list(&stack_a, argc, argv);
 	if (ft_is_sorted(argc, &stack_a) == 0)
 		return (1);
 	ft_index(&stack_a, argc, argv);
 	radix_sort(argc, &stack_a, &stack_b);
-	print_list(&stack_a);
 	return (0);
 }
 

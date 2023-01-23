@@ -6,26 +6,18 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/19 13:03:22 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/21 18:37:04 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/23 15:57:33 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
 
-int	ft_isdigit(int a)
+long long	ft_atoi(const char *str)
 {
-	if (a > 47 && a < 58)
-		return (1);
-	else
-		return (0);
-}
-
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	minuscounter;
-	int	result;
+	int			i;
+	int			minuscounter;
+	long long	result;
 
 	i = 0;
 	minuscounter = 0;
@@ -48,17 +40,48 @@ int	ft_atoi(const char *str)
 	return (result);
 }
 
-int	input_val(char **argv)
+int	input_val(int argc, char **argv)
 {
 	int	i;
+	int	j;
 	int	input;
 
 	i = 1;
-	while (argv[i])
+	while (i < argc)
 	{
-		input = ft_atoi(argv[i]);
-		if (input > INT_MAX || input < INT_MIN)
+		if (ft_atoi(argv[i]) > INT_MAX || ft_atoi(argv[i]) < INT_MIN)
 			return (1);
+		j = 0;
+		if (argv[i][0] == '-')
+			j++;
+		while (argv[i][j])
+		{
+			if (argv[i][j] > 57 || argv[i][j] < 48)
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	if (check_duplicate(argc, argv) == 1)
+		return (1);
+	return (0);
+}
+
+int	check_duplicate(int argc, char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = i + 1;
+		while (argv[j])
+		{
+			if (ft_atoi(argv[j]) == ft_atoi(argv[i]))
+				return (1);
+			j++;
+		}
 		i++;
 	}
 	return (0);

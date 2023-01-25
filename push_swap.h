@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:10:32 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/23 16:02:05 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/25 17:27:40 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ void		sa(t_list **stack);
 void		rra(t_list **stack_a);
 void		pb(t_list **stack_a, t_list **stack_b);
 void		sb(t_list **stack);
+void		ft_free(t_list **stack_a);
 
 #endif

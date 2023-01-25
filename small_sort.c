@@ -6,19 +6,11 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/20 14:34:27 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/23 14:03:17 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/25 17:46:58 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	sort_2(t_list **stack_a)
-// {
-// 	//maybe with 2 ints in the stack you always need to sa() or ra();
-// 	//because if it was sorted isSorted would catch it.
-// 	if ((*stack_a)->data > (*stack_a)->next->data)
-// 		sa(stack_a);
-// }
 
 void	sort_3(int argc, t_list **stack_a)
 {

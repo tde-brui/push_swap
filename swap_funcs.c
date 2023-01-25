@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:33:10 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/23 15:04:39 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/25 20:44:52 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	head_a = (*stack_a);
 	head_b = (*stack_b);
 	last_a = (*stack_a);
-	prev = NULL;
+	prev = (*stack_a);
 	while (last_a != NULL)
 	{
 		last_a = last_a->next;

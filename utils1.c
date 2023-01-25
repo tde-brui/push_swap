@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:25:45 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/23 16:00:55 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/01/25 20:41:49 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,22 @@ void	list_add_back(int argc, t_list **stack_a, int value)
 	}
 }
 
+void	ft_free(t_list **stack_a)
+{
+	t_list	*head;
+	t_list	*curr;
+
+	head = (*stack_a);
+	curr = (*stack_a);
+	while (head != NULL)
+	{
+		curr = curr->next;
+		free(curr);
+		if (curr == head)
+			break ;
+	}
+}
+
 // void	print_list(t_list **stack_a)
 // {
 // 	// DONT FORGET TO REMOVE/COMMENT OUT PRINT LIST!!!
@@ -71,6 +87,4 @@ void	list_add_back(int argc, t_list **stack_a, int value)
 // 		if (head == curr)
 // 			break ;
 // 	}
-// 	// printf("%d//", head->data);
-// 	// printf("%d\n", head->index);
 // }

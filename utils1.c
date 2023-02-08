@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:25:45 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/02/08 18:11:38 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/08 18:16:34 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_list	*list_new(int value)
 
 	new_node = malloc(sizeof(t_list));
 	if (!new_node)
-		return (NULL);
+		exit(1);
 	new_node->data = value;
 	new_node->next = NULL;
 	return (new_node);

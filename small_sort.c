@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/20 14:34:27 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/02/08 18:03:40 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/08 18:19:38 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	sort_3(t_list **stack_a)
 		three = (*stack_a)->next->next->data;
 		if (one > two && (*stack_a)->data > three)
 		{
-			ra(stack_a);
+			ra( stack_a);
 			if (two > three)
 				sa(stack_a);
 		}

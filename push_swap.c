@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 11:59:12 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/02/08 18:11:49 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/08 18:20:35 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc == 1 || argc == 2)
+	if (argc == 1)
 		return (1);
 	if (input_val(argc, argv) == 1)
 	{

@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/19 13:03:22 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/02/08 17:58:30 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/08 18:16:59 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,16 @@ long long	ft_atoi(const char *str)
 	return (result);
 }
 
+size_t	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
 int	input_val(int argc, char **argv)
 {
 	int	i;
@@ -48,10 +58,12 @@ int	input_val(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
+		if (ft_strlen(argv[i]) > 11)
+			return (1);
 		if (ft_atoi(argv[i]) > INT_MAX || ft_atoi(argv[i]) < INT_MIN)
 			return (1);
 		j = 0;
-		if (argv[i][0] == '-')
+		if (argv[i][0] == '-' && (argv[i][1] != ' ' && argv[i][1] != '\0'))
 			j++;
 		while (argv[i][j])
 		{

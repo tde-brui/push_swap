@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:25:45 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/25 20:41:49 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/08 18:11:38 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_list	*list_new(int value)
 	return (new_node);
 }
 
-void	list_add_back(int argc, t_list **stack_a, int value)
+void	list_add_back(t_list **stack_a, int value)
 {
 	t_list	*head;
 

@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 12:33:10 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/25 20:44:52 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/08 17:59:27 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	write(1, "pa\n", 3);
 }
 
-void	ra(int argc, t_list **stack)
+void	ra(t_list **stack)
 {
 	(*stack) = (*stack)->next;
 	write(1, "ra\n", 3);

@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/20 14:41:30 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/23 13:47:01 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/08 18:05:23 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	big_sort(int argc, t_list **stack_a, t_list **stack_b)
 		{
 			value = (*stack_a)->index;
 			if (((value >> i) & 1) == 1)
-				ra(argc, stack_a);
+				ra(stack_a);
 			else
 				pb(stack_a, stack_b);
 			j++;

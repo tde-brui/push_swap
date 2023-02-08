@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/19 13:03:22 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/25 14:55:28 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/08 17:58:30 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int	input_val(int argc, char **argv)
 {
 	int	i;
 	int	j;
-	int	input;
 
 	i = 1;
 	while (i < argc)
@@ -87,7 +86,7 @@ int	check_duplicate(int argc, char **argv)
 	return (0);
 }
 
-int	ft_is_sorted(int argc, t_list **stack_a)
+int	ft_is_sorted(t_list **stack_a)
 {
 	t_list	*head;
 	t_list	*curr;

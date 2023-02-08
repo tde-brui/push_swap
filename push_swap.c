@@ -6,7 +6,7 @@
 /*   By: tde-brui <tde-brui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 11:59:12 by tde-brui      #+#    #+#                 */
-/*   Updated: 2023/01/25 20:41:45 by tde-brui      ########   odam.nl         */
+/*   Updated: 2023/02/08 18:11:49 by tde-brui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*pass_list(t_list **stack_a, int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		list_add_back(argc, stack_a, ft_atoi(argv[i]));
+		list_add_back(stack_a, ft_atoi(argv[i]));
 		i++;
 	}
 	head = (*stack_a);
@@ -45,9 +45,9 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	pass_list(&stack_a, argc, argv);
-	if (ft_is_sorted(argc, &stack_a) == 0)
+	if (ft_is_sorted(&stack_a) == 0)
 		return (1);
-	ft_index(&stack_a, argc, argv);
+	ft_index(&stack_a, argc);
 	radix_sort(argc, &stack_a, &stack_b);
 	ft_free(&stack_a);
 	return (0);

@@ -1,6 +1,6 @@
 NAME = push_swap
 CC = gcc
-CFLAGS = -g -fsanitize=address -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 SOURCES = push_swap.c utils1.c utils2.c index.c radix_sort.c swap_funcs.c  small_sort.c swap_funcs2.c
 OBJECT = $(SOURCES:.c=.o)
 
@@ -10,7 +10,7 @@ $(NAME): $(OBJECT)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJECT)
 
 %.o: %.c 
-	$(CC) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJECT)
